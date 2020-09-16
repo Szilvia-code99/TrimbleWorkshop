@@ -16,17 +16,16 @@ namespace Curs1
    
     class Homework1
     {
+        ///<summary>
         //Reading the 3 angles of a triangle, deciding whether the triangle is valid, and printing equilateral, isosceles or scalene based 
-       public static void CalculateTriangle()
+        ///</summary>
+        public static void CalculateTriangle()
         {
-            float baseAngle1, baseAngle2, vertexAngle, sum;
+            float baseAngle1=0, baseAngle2=0, vertexAngle=0, sum;
             //base angle,vertexangle
-            Console.WriteLine("Enter the first base angle:");
-            baseAngle1 = float.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the second base angle:");
-            baseAngle2 = float.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the vertex angle:");
-            vertexAngle = float.Parse(Console.ReadLine());
+            Validation.ValidateInputData(ref baseAngle1, "Enter the first base angle:");
+            Validation.ValidateInputData(ref baseAngle2, "Enter the second base angle:");
+            Validation.ValidateInputData(ref vertexAngle, "Enter the vertex angle:");
 
             // Calculate the sum of all angles of triangle 
             sum = baseAngle1 + baseAngle2 + vertexAngle;
@@ -47,24 +46,26 @@ namespace Curs1
             }
         }
 
+        ///<summary>
         //calculating the surface of a circle based on the given radius
-       public static void CalculateSurface()
+        ///</summary>
+        public static void CalculateSurface()
         {
-            Console.WriteLine("Please enter the radius of the circle");
-            double circleRadius = Double.Parse(Console.ReadLine());
+            double circleRadius = 0;
+            Validation.ValidateInputData(ref circleRadius, "Enter the radius of the circle");
             double surface = Math.PI * Math.Pow(circleRadius,2);
             Console.WriteLine("The surface of the circle is, {0:F2}", surface);
         }
 
+        ///<summary>
         //convert celsius to fahrenheit and kelvin and vice-versa
-       public static void CalculateTemperature()
+        ///</summary>
+        public static void CalculateTemperature()
         {
-            Console.WriteLine("Enter the temperature in Celsius");
-            float temperatureInCelsiusDegree = float.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the temperature in Kelvin");
-            float temperatureInKelvin = float.Parse(Console.ReadLine());
-            Console.WriteLine("Enter the temperature in Fahrenheit");
-            float temperatureInFahrenheit = float.Parse(Console.ReadLine());
+            float temperatureInCelsiusDegree = 0, temperatureInKelvin=0, temperatureInFahrenheit=0;
+            Validation.ValidateInputData(ref temperatureInCelsiusDegree, "Enter the temperature in Celsius");
+            Validation.ValidateInputData(ref temperatureInKelvin, "Enter the temperature in Kelvin");
+            Validation.ValidateInputData(ref temperatureInFahrenheit, "Enter the temperature in Fahrenheit");
 
             float temperatureConversionCelsiusToKelvin = (float)temperatureInCelsiusDegree + (float)273.15;
             double temperatureConversionCelsiusToFahrenheit = temperatureInCelsiusDegree * 9 / 5 + 32;

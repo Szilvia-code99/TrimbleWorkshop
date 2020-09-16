@@ -28,6 +28,26 @@ namespace InputHelper
             }
         }
 
+        public static void ValidateInputData(ref double number, string askFromUser)
+        {
+            Console.WriteLine(askFromUser);
+            try {
+                number = Double.Parse(Console.ReadLine());
+                if (number < 0) {
+                    Console.WriteLine("Negative number is not allowed!");
+                    ValidateInputData(ref number, askFromUser);
+                }
+            }
+            catch (FormatException ex) {
+                Console.WriteLine("Not a valid number");
+                ValidateInputData(ref number, askFromUser);
+            }
+            catch (Exception ex) {
+                Console.WriteLine("Not a valid numerical value!");
+                ValidateInputData(ref number, askFromUser);
+            }
+        }
+
         public static void ValidateInputDataRadius(ref float number, string askFromUser)
         {
             Console.WriteLine(askFromUser);
