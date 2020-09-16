@@ -40,7 +40,7 @@ namespace Curs4
         }
         static void Main(string[] args)
         {
-            int opHtion = 0;
+            int option = 0;
 
             while(!(option==1 || option==2 || option == 3)) {
 

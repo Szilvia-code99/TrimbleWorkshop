@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using InputHELPER;
+using InputHelper;
 
 ///<summary>
 
@@ -82,8 +82,6 @@ namespace Curs1
             CalculateSurface();
             CalculateTemperature();
             CalculateTriangle();
-
-           Validation.isOkay();
         }
     }
 }

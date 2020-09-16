@@ -153,7 +153,7 @@ namespace Curs2
             string userInput="";
             Validation.ValidateInputData(ref userInput, "Enter your string ");
             char symbolToFindInUserInput = ' ';
-            Validation.ValidateInputData(symbolToFindInUserInput, "Enter the symbol you want to find ");
+            Validation.ValidateInputData(ref symbolToFindInUserInput, "Enter the symbol you want to find ");
             FindOccurencesOfSymbolInString(userInput, symbolToFindInUserInput);
 
             string userInput1 = "";
