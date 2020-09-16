@@ -140,24 +140,24 @@ namespace Curs2
         static void Main(string[] args)
         {
             int number=0;
-            Validation.ValidateInputData(number,"Enter a number");
+            Validation.ValidateInputData(ref number,"Enter a number");
 
             OddAndEvenNumbers(number);
             Console.WriteLine();
 
             int grade = 0;
-            Validation.ValidateInputData(grade, "Enter your grade");
+            Validation.ValidateInputData(ref grade, "Enter your grade");
             SpecifyGrade(grade);
             Console.WriteLine();
 
             string userInput="";
-            Validation.ValidateInputData(userInput, "Enter your string ");
+            Validation.ValidateInputData(ref userInput, "Enter your string ");
             char symbolToFindInUserInput = ' ';
             Validation.ValidateInputData(symbolToFindInUserInput, "Enter the symbol you want to find ");
             FindOccurencesOfSymbolInString(userInput, symbolToFindInUserInput);
 
             string userInput1 = "";
-            Validation.ValidateInputData(userInput1, "Enter your string ");
+            Validation.ValidateInputData(ref userInput1, "Enter your string ");
             if (isStringPalindrome(userInput1)) {
                 Console.WriteLine($"{userInput1} is Palindrom");
             } else {
