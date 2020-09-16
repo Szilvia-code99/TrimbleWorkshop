@@ -1,7 +1,8 @@
 ﻿using System;
+using InputHelper;
 
 namespace Curs2
-{
+{ 
     ///<summary>
     /// 1. Write a program that specifies the odd and even numbers between 0 and a value entered by the user.
     /// 2. Write a program that specifies if a grade is excellent, very good, good, average or fail. The program should be implemented using switch statement.
@@ -10,21 +11,18 @@ namespace Curs2
     /// The program should be implemented in multiple ways: using all type of learned loops	
     /// 4. Write a program that checks if a string is palindrome (= strings that can be read equally from right to left, such as 'kayak', ‘ANNA’).
     ///</summary> 
-    class NegativeNumberNotAllowed : Exception
-    {
-        public NegativeNumberNotAllowed(string message) : base(message)
-        {
-
-        }
-    }
+    
     class Homework2
     {
         ///<summary>
-        ///first printing out the even numbers from 0 to number given by user, then the odd numbers
+        ///First printing out the even numbers from 0 to number given by user, then the odd numbers
         ///</summary>
         /// <param name="number"></param>
         public static void OddAndEvenNumbers(int number)
         {
+                if(number==0) {
+                 Console.WriteLine("The even numbers are: 0");
+                }
                 Console.WriteLine("The even numbers are: ");
                 for (int i = 0; i <= number; i++) {
                     if (i % 2 == 0) {
@@ -40,7 +38,7 @@ namespace Curs2
         }
 
         ///<summary>
-        //specifying if a grade is excellent, very good, good, average or fail. 
+        //Specifying if a grade is excellent, very good, good, average or fail. 
         ///</summary>
         /// <param name="grade"></param>
         public static void SpecifyGrade(int grade)
@@ -63,7 +61,7 @@ namespace Curs2
         }
 
         ///<summary>
-        ///count number of occurences of symbol in given string
+        ///Count number of occurences of symbol in given string
         ///</summary>
         /// <param name="userInput"></param>
         /// <param name="symbol"></param>
@@ -71,23 +69,31 @@ namespace Curs2
         {
             int count = 0;
             foreach (char c in userInput)
-                if (c == symbol) count++;
+                if (c == symbol) {
+                    count++;
+                }
 
             int count1 = 0;
             for (int i= 0;i < userInput.Length;i++){
-                if (userInput[i]== symbol) count1++;
+                if (userInput[i] == symbol) {
+                    count1++;
+                }
                 }
 
             int count2 = 0, index=0;
             while(index<userInput.Length) {
-                if (userInput[index] == symbol) count2++;
+                if (userInput[index] == symbol) {
+                    count2++;
+                }
                 index++;
             }
 
             index = 0;
             int count3 = 0;
             do {
-                if (userInput[index] == symbol) count3++;
+                if (userInput[index] == symbol) { 
+                    count3++;
+                }
                 index++;
             } while (index < userInput.Length);
 
@@ -98,7 +104,7 @@ namespace Curs2
         }
 
         ///<summary>
-        //checking if a word is palindrom or not
+        //Checking if a word is palindrom or not
         ///</summary>
         /// <param name="userInput"></param>
         public static bool isStringPalindrome(string userInput)
@@ -114,7 +120,7 @@ namespace Curs2
         }
 
         /// <summary>
-        /// checking if a word is plaindrom or not
+        /// Checking if a word is plaindrom or not
         /// </summary>
         /// <param name="userInput"></param>
         public static void RecursiveIsStringPalindrome2(string userInput)
@@ -134,51 +140,24 @@ namespace Curs2
         static void Main(string[] args)
         {
             int number=0;
+            Validation.ValidateInputData(number,"Enter a number");
 
-                Console.WriteLine("Enter a number");
-                try {
-
-                   try {
-                         number = Int32.Parse(Console.ReadLine());
-                   } catch {
-                         Console.WriteLine("Not a valid numerical value!");
-                   }
-                    if (number<0)
-                    throw new NegativeNumberNotAllowed("Negative number is not allowed");
-
-                } catch (NegativeNumberNotAllowed ex) {
-                   
-                    Console.WriteLine(ex);
-                }
-            
-           
             OddAndEvenNumbers(number);
             Console.WriteLine();
 
-            Console.WriteLine("Enter your grade ");
             int grade = 0;
-            try {
-                while (!int.TryParse(Console.ReadLine(), out grade)) {
-                    Console.WriteLine("Please Enter a valid numerical value!");
-                }
-                if (grade < 0)
-                    throw new NegativeNumberNotAllowed("Negative number is not allowed");
-            }
-            catch (NegativeNumberNotAllowed ex) {
-                Console.WriteLine(ex);
-            }
+            Validation.ValidateInputData(grade, "Enter your grade");
             SpecifyGrade(grade);
             Console.WriteLine();
 
-            Console.WriteLine("Enter your string ");
-            string userInput = Console.ReadLine();
-            Console.WriteLine("Enter the symbol you want to find ");
-           
-            char symbolToFindInUserInput = Char.Parse(Console.ReadLine());
+            string userInput="";
+            Validation.ValidateInputData(userInput, "Enter your string ");
+            char symbolToFindInUserInput = ' ';
+            Validation.ValidateInputData(symbolToFindInUserInput, "Enter the symbol you want to find ");
             FindOccurencesOfSymbolInString(userInput, symbolToFindInUserInput);
 
-            Console.WriteLine("Enter your string ");
-            string userInput1 = Console.ReadLine();
+            string userInput1 = "";
+            Validation.ValidateInputData(userInput1, "Enter your string ");
             if (isStringPalindrome(userInput1)) {
                 Console.WriteLine($"{userInput1} is Palindrom");
             } else {

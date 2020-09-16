@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using InputHELPER;
 
 ///<summary>
 
@@ -9,7 +11,7 @@
 
 ///</summary> 
 
-namespace Course1
+namespace Curs1
 {
    
     class Homework1
@@ -80,6 +82,8 @@ namespace Course1
             CalculateSurface();
             CalculateTemperature();
             CalculateTriangle();
+
+           Validation.isOkay();
         }
     }
 }
