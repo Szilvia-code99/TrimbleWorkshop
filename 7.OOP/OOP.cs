@@ -17,22 +17,7 @@ namespace OOP
    /// </summary>
    class OOP
    {
-      /// <summary>
-      /// Method for reading in users option and validating it
-      /// </summary>
-      /// <param name="option"></param>
-      public static void ChooseOption(ref int option)
-      {
-         do {
-
-            Console.WriteLine("1. Display teacher names");
-            Console.WriteLine("2. Display student names");
-            Console.WriteLine("3. Exit");
-            UserInputValidation.ValidateUserInput(ref option, "Choose an option");
-            Console.WriteLine();
-
-         } while (!(option == 1 || option == 2 || option == 3));
-      }
+     
       static void Main(string[] args)
       {
          List<Teacher> teachers = new List<Teacher>
@@ -55,12 +40,12 @@ namespace OOP
 
          int option = 0;
             do {
-            ChooseOption(ref option);
+            UserOptionValidation.ChooseOption(ref option);
             switch (option) {
                case 1:
                   foreach (Teacher teacher in teachers) {
-                     teacher.Display();
-                     teacher.CareerPath();
+                    teacher.Display();
+                     ((Person)teacher).CareerPath();
                   }
                   break;
                case 2:

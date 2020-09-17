@@ -18,7 +18,6 @@ namespace OOP
       /// </summary>
       public new void Display()
       {
-         base.Display();
          Console.WriteLine($"Departament: {department} Title: {title}");
       }
       /// <summary>

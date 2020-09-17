@@ -4,9 +4,9 @@ using System.Text;
 
 namespace OOP
 {
-  public class Person
+   public abstract class Person
    {
-      private string name;
+      private string name { get; set; }
       private string surname;
       private int age;
       private int identifier;
@@ -27,7 +27,7 @@ namespace OOP
       /// <summary>
       /// Displaying attributes of person
       /// </summary>
-      public void Display()
+      public virtual void Display()
       {
          Console.Write($"Name: {name} Surname: {surname} Age: {Age} Identifier: {identifier} ");
       }
