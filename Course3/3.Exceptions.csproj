@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InputHelper1\InputHelper.csproj" />
+    <ProjectReference Include="..\InputHelper1\UserInputValidator.csproj" />
   </ItemGroup>
 
 </Project>

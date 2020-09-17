@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using InputHelper;
+using UserInputValidator;
 
-namespace Course3
+namespace Exceptions
 {
         ///<summary>
         ///Create a C# program : That reads an integer day number(between 1 and 365) from the console and converts this number into a month 
@@ -16,36 +16,8 @@ namespace Course3
         ///It is divisible by 4;
         ///It is either not divisible by 100, or it is divisible by 400;
         ///</summary> 
-    class Homework3
+    class Exceptions
     {
-        
-        ///<summary>
-        ///Check if the entered year is a leap year or not
-        ///</summary> 
-        public static bool IsLeapYear(int year)
-        {
-            // If a year is multiple of 400,    
-            // then it is a leap year  
-            if (year % 400 == 0) {
-                return true;
-            }
-
-            // Else If a year is multiple of 100,  
-            // then it is not a leap year  
-            if (year % 100 == 0) {
-                return false;
-            }
-
-            // Else If a year is multiple of 4,  
-            // then it is a leap year  
-            if (year % 4 == 0) {
-                return true;
-            }
-
-            return false;
-        }
-
-
         ///<summary>
         ///Function that calculates the month and the day based on the dayNumber of the year
         ///</summary> 
@@ -113,28 +85,28 @@ namespace Course3
 
         static void Main(string[] args)
         {
-            List<int> leapYearMonths = new List<int> {31,29,31,30,31,30,31,31,30,31,30,31};
-            List<int> notLeapYearMonths = new List<int> { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
             int year = 0;
-            string month="";
+            UserInputValidation.ValidateUserInput(ref year, "Enter a year");
+            bool IsLeapYear = (year % 4 == 0) && (year % 100 != 0 || year % 400 == 0);
+            List<int> DaysInMonths = IsLeapYear ?
+                     new List<int>{ 31,29,31,30,31,30,31,31,30,31,30,31} : 
+                     new List<int>{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+            int dayNumber = 0;
+            string month = string.Empty;
             int day = 0;
-            int dayNumber =0;
 
-            Validation.ValidateInputData(ref year, "Enter a year");
-            if (IsLeapYear(year)) {
-                while(!(dayNumber>=1 && dayNumber<=366)) {
-                  Validation.ValidateInputData(ref dayNumber, "Enter a number between 1 and 366");
-                    CalculateMonthAndDayFromDayNumber(leapYearMonths, ref month, ref day, ref dayNumber);
-
+            if (IsLeapYear) {
+            while (!(dayNumber >= 1 && dayNumber <= 366)) {
+               UserInputValidation.ValidateUserInput(ref dayNumber, "Enter a number between 1 and 366");
+               CalculateMonthAndDayFromDayNumber(DaysInMonths, ref month, ref day, ref dayNumber);
                 }
-            } else {
+            } else { 
                 while (!(dayNumber >= 1 && dayNumber <= 365)) {
-                    Validation.ValidateInputData(ref dayNumber, "Enter a number between 1 and 365");
-                    CalculateMonthAndDayFromDayNumber(notLeapYearMonths, ref month, ref day, ref dayNumber);
+                     UserInputValidation.ValidateUserInput(ref dayNumber, "Enter a number between 1 and 365");
+                    CalculateMonthAndDayFromDayNumber(DaysInMonths, ref month, ref day, ref dayNumber);
                 }
             }
-
             Console.WriteLine($"{month} {day}");
         }
     }

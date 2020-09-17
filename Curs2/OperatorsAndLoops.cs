@@ -1,7 +1,7 @@
 ﻿using System;
-using InputHelper;
+using UserInputValidator;
 
-namespace Curs2
+namespace OperatorsAndLoops
 { 
     ///<summary>
     /// 1. Write a program that specifies the odd and even numbers between 0 and a value entered by the user.
@@ -12,7 +12,7 @@ namespace Curs2
     /// 4. Write a program that checks if a string is palindrome (= strings that can be read equally from right to left, such as 'kayak', ‘ANNA’).
     ///</summary> 
     
-    class Homework2
+    class OperatorsAndLoops
     {
         ///<summary>
         ///First printing out the even numbers from 0 to number given by user, then the odd numbers
@@ -21,8 +21,8 @@ namespace Curs2
         public static void OddAndEvenNumbers(int number)
         {
                 if(number==0) {
-                 Console.WriteLine("The even numbers are: 0");
-                }
+                   Console.WriteLine("The even numbers are: 0");
+                } else {
                 Console.WriteLine("The even numbers are: ");
                 for (int i = 0; i <= number; i++) {
                     if (i % 2 == 0) {
@@ -35,10 +35,11 @@ namespace Curs2
                         Console.WriteLine($"{i} ");
                     }
                 }
+            }
         }
 
         ///<summary>
-        //Specifying if a grade is excellent, very good, good, average or fail. 
+        ///Specifying if a grade is excellent, very good, good, average or fail. 
         ///</summary>
         /// <param name="grade"></param>
         public static void SpecifyGrade(int grade)
@@ -123,7 +124,7 @@ namespace Curs2
         /// Checking if a word is plaindrom or not
         /// </summary>
         /// <param name="userInput"></param>
-        public static void RecursiveIsStringPalindrome2(string userInput)
+        public static void RecursiveIsStringPalindrome(string userInput)
         {
             if (userInput.Length <= 1 ) {
                 Console.WriteLine("IS Palindrom");
@@ -133,38 +134,37 @@ namespace Curs2
                 Console.WriteLine("Is NOT Palindrome");
                 return;
             }
-
-            RecursiveIsStringPalindrome2(userInput.Substring(1, userInput.Length - 2));
+            RecursiveIsStringPalindrome(userInput.Substring(1, userInput.Length - 2));
         }
 
         static void Main(string[] args)
         {
-            int number=0;
-            Validation.ValidateInputData(ref number,"Enter a number");
+            int number = 0;
+            UserInputValidation.ValidateUserInput(ref number,"Enter a number");
 
             OddAndEvenNumbers(number);
             Console.WriteLine();
 
             int grade = 0;
-            Validation.ValidateInputData(ref grade, "Enter your grade");
+            UserInputValidation.ValidateUserInput(ref grade, "Enter your grade");
             SpecifyGrade(grade);
             Console.WriteLine();
 
-            string userInput="";
-            Validation.ValidateInputData(ref userInput, "Enter your string ");
+            string userInput = string.Empty;
+            UserInputValidation.ValidateUserInput(ref userInput, "Enter your string ");
             char symbolToFindInUserInput = ' ';
-            Validation.ValidateInputData(ref symbolToFindInUserInput, "Enter the symbol you want to find ");
+            UserInputValidation.ValidateUserInput(ref symbolToFindInUserInput, "Enter the symbol you want to find ");
             FindOccurencesOfSymbolInString(userInput, symbolToFindInUserInput);
 
-            string userInput1 = "";
-            Validation.ValidateInputData(ref userInput1, "Enter your string ");
+            string userInput1 = string.Empty;
+            UserInputValidation.ValidateUserInput(ref userInput1, "Enter your string ");
             if (isStringPalindrome(userInput1)) {
                 Console.WriteLine($"{userInput1} is Palindrom");
             } else {
                 Console.WriteLine($"{userInput1} is NOT Palindrom");
             }
 
-            RecursiveIsStringPalindrome2(userInput1);
+            RecursiveIsStringPalindrome(userInput1);
         }
     }
 }
