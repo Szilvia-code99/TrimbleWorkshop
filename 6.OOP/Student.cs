@@ -2,9 +2,12 @@
 
 namespace OOP
 {
-   class Student:Person
+   /// <summary>
+   /// Derived class from Person that representts a student
+   /// </summary>
+   public class Student : Person
    {
-      private string major;
+      protected string major;
 
       public Student(string Name,string Surname, int Age,int Identifier,string Major) : base(Name, Surname, Age, Identifier)
       {
@@ -16,7 +19,6 @@ namespace OOP
       /// </summary>
       public new void Display()
       {
-         base.Display();
          Console.WriteLine($"Major: {major}");
       }
 
@@ -26,17 +28,6 @@ namespace OOP
       public override void CareerPath()
       {
          Console.WriteLine("Learning for bachelor's degree");
-      }
-      public string Major
-      {
-         get
-         {
-            return major;
-         }
-         set
-         {
-            major = value;
-         }
       }
    }
 }

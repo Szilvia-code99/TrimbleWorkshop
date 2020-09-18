@@ -2,12 +2,15 @@
 
 namespace OOP
 {
+   /// <summary>
+   /// Derived class from Person that represents a teacher
+   /// </summary>
    public class Teacher : Person
    {
-      private string department;
-      private string title;
+      protected string department;
+      protected string title;
       
-      public Teacher(string Name,string Surname,int Age,int Identifier,string department,string title): base(Name,Surname,Age,Identifier)
+      public Teacher(string Name, string Surname, int Age, int Identifier, string department, string title): base(Name, Surname, Age, Identifier)
       {
          this.department = department;
          this.title = title;
@@ -26,29 +29,6 @@ namespace OOP
       public new void CareerPath()
       {
          Console.WriteLine("Learning for doctor's degree");
-      }
-      public string Department
-      {
-         get
-         {
-            return department;
-         }
-         set
-         {
-            department = value;
-         }
-      }
-
-      public string Title
-      {
-         get
-         {
-            return title;
-         }
-         set
-         {
-            title = value;
-         }
       }
    }
 }

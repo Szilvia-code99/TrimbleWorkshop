@@ -1,13 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_7.OOP</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\InputHelper1\UserInputValidator.csproj" />
+    <ProjectReference Include="..\UserInputValidator\UserInputValidator.csproj" />
   </ItemGroup>
 
 </Project>

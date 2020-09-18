@@ -20,16 +20,14 @@ namespace OOP
      
       static void Main(string[] args)
       {
-         List<Teacher> teachers = new List<Teacher>
-         {
+         List<Teacher> teachers = new List<Teacher> {
             new Teacher("Anne","Marie",30,83262,"Biology","DR"),
             new Teacher("Kate","Winslet",25,938274,"Mathematics","PHD"),
             new Teacher("Barbara", "Plavin", 26, 83737832, "Gymnastics", "DR"),
             new Teacher("Obama", "Barack", 55, 983262, "Politics", "DR")
           };
 
-         List<Student> students = new List<Student>
-         {
+         List<Student> students = new List<Student> {
             new Student("Romee","Strjid",21,98362,"Informatics"),
             new Student("Viktor","Orban",25,938274,"Politics"),
             new Student("Ion", "Cruza", 26, 83737832, "Architecture"),
@@ -40,7 +38,7 @@ namespace OOP
 
          int option = 0;
             do {
-            UserOptionValidation.ChooseOption(ref option);
+            UserOptionSelection.ChooseOption(ref option);
             switch (option) {
                case 1:
                   foreach (Teacher teacher in teachers) {

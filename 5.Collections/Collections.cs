@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
+using System.Numerics;
 using UserInputValidator;
 
 namespace Collections
@@ -25,18 +25,12 @@ namespace Collections
    class Collections
    {
       ///<summary>
-      ///Function to validate user entered options
-      ///</summary> 
-     
-
-      ///<summary>
       ///Function to decide whether a number is prime or not
       ///</summary> 
       public static bool IsPrime(int number)
       {
-         int m = 0;
-         m = number / 2;
-         for (int i = 2; i <= m; i++) {
+         int middle = number / 2;
+         for (int i = 2; i <= middle; i++) {
             if (number % i == 0) {
                return false;
             }
@@ -161,11 +155,10 @@ namespace Collections
                result[i, j] = 0;
             }
          }
-
-         int sum = 0;
+        
          for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-               sum = 0;
+              int sum = 0;
                for (int k = 0; k < size; k++)
                   sum = sum + first[i, k] * second[k, j];
                result[i, j] = sum;
@@ -198,7 +191,7 @@ namespace Collections
          int option = 0;
 
          do {
-            UserOptionValidation.ChooseOption(ref option);
+            UserOptionSelection.ChooseOption(ref option);
             switch (option) {
                case 1:
                   foreach (string teacher in teachers) {
@@ -230,11 +223,13 @@ namespace Collections
 
          Console.WriteLine();
          Console.WriteLine($"Count of prime numbers in list: {CountPrimeNumbers(listNumbers)}");
+         int listPrimesCount = listNumbers.Where(num => IsPrime(num)).Count();
          Console.WriteLine($"Count of prime numbers in array: {CountPrimeNumbers(arrayNumbers)}");
          Console.WriteLine($"Count of prime numbers in dictionary: {CountPrimeNumbers(dictionaryNumbers)}");
 
          Console.WriteLine();
          Console.WriteLine($"Average of prime numbers in list: {AverageOfPrimes(listNumbers)}");
+         double listPrimesAverage = listNumbers.Where(num => IsPrime(num)).Average();
          Console.WriteLine($"Average of prime numbers in array: {AverageOfPrimes(arrayNumbers)}");
          Console.WriteLine($"Average of prime numbers in dictionary: {AverageOfPrimes(dictionaryNumbers)}");
 
@@ -243,17 +238,13 @@ namespace Collections
 
          for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
-               //   if (i == j ? identityMatrix[i , j] = 0 : identityMatrix[i , j] = 1) {}
-               if (i == j) {
-                  identityMatrix[i, j] = 1;
-               } else {
-                  identityMatrix[i, j] = 0;
-               }
+               identityMatrix[i, j] = (i == j) ? 1 : 0;
             }
          }
          Console.WriteLine();
          Console.WriteLine("Identity Matrix: ");
-         Console.WriteLine();
+         Console.WriteLine(Matrix4x4.Identity);
+        
          DisplayMatrix(identityMatrix,15);
 
          //4.Problem
@@ -263,9 +254,9 @@ namespace Collections
 
          Console.WriteLine();
          DisplayMatrix(a, 4);
-         Console.WriteLine("   X   ");
+         Console.WriteLine("\n   X   ");
          DisplayMatrix(b, 4);
-         Console.WriteLine(" = ");
+         Console.WriteLine(" = ",Environment.NewLine);
          DisplayMatrix(result,4);
          Console.WriteLine();
 
