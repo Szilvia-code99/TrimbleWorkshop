@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTeacher xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Teacher>
+    <name>Anne</name>
+    <surname>Marie</surname>
+    <age>30</age>
+    <identifier>83262</identifier>
+    <workingHours>5</workingHours>
+    <subject>Biology</subject>
+  </Teacher>
+  <Teacher>
+    <name>Kate</name>
+    <surname>Winslet</surname>
+    <age>25</age>
+    <identifier>938274</identifier>
+    <workingHours>8</workingHours>
+    <subject>Mathematics</subject>
+  </Teacher>
+</ArrayOfTeacher>

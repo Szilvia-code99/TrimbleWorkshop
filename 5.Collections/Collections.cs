@@ -4,7 +4,7 @@ using System.Linq;
 using System.Numerics;
 using UserInputValidator;
 
-namespace Collections
+namespace _5Collections
 {
    ///<summary>
    ///1.Create a program that has 2 options for the user:
@@ -22,7 +22,7 @@ namespace Collections
    ///Tip: use a random generator for deciding the winner
    ///</summary> 
 
-   class Collections
+   public class Collections
    {
       ///<summary>
       ///Function to decide whether a number is prime or not

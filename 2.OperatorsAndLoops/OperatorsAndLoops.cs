@@ -1,7 +1,7 @@
 ﻿using System;
 using UserInputValidator;
 
-namespace OperatorsAndLoops
+namespace OperatorsAndLoops1
 { 
     ///<summary>
     /// 1. Write a program that specifies the odd and even numbers between 0 and a value entered by the user.
@@ -12,13 +12,13 @@ namespace OperatorsAndLoops
     /// 4. Write a program that checks if a string is palindrome (= strings that can be read equally from right to left, such as 'kayak', ‘ANNA’).
     ///</summary> 
     
-    class OperatorsAndLoops
+    public class OperatorsAndLoops
     {
-        ///<summary>
-        ///First printing out the even numbers from 0 to number given by user, then the odd numbers
-        ///</summary>
-        /// <param name="number"></param>
-        public static void OddAndEvenNumbers(int number)
+      ///<summary>
+      ///First printing out the even numbers from 0 to number given by user, then the odd numbers
+      ///</summary>
+      /// <param name="number"></param>
+      public static void OddAndEvenNumbers(int number)
         {
                 if(number==0) {
                    Console.WriteLine("The even numbers are: 0");
@@ -137,6 +137,7 @@ namespace OperatorsAndLoops
             RecursiveIsStringPalindrome(userInput.Substring(1, userInput.Length - 2));
         }
 
+        
         static void Main(string[] args)
         {
             int number = 0;

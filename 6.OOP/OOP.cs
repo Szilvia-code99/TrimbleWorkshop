@@ -21,19 +21,19 @@ namespace OOP
       static void Main(string[] args)
       {
          List<Teacher> teachers = new List<Teacher> {
-            new Teacher("Anne","Marie",30,83262,"Biology","DR"),
-            new Teacher("Kate","Winslet",25,938274,"Mathematics","PHD"),
-            new Teacher("Barbara", "Plavin", 26, 83737832, "Gymnastics", "DR"),
-            new Teacher("Obama", "Barack", 55, 983262, "Politics", "DR")
+            new Teacher("Anne","Marie",30,83262,5,"Biology"),
+            new Teacher("Kate","Winslet",25,938274,8,"Mathematics"),
+            new Teacher("Barbara", "Plavin", 26, 83737832,10, "Gymnastics"),
+            new Teacher("Obama", "Barack", 55, 983262, 2,"Politics")
           };
 
          List<Student> students = new List<Student> {
-            new Student("Romee","Strjid",21,98362,"Informatics"),
-            new Student("Viktor","Orban",25,938274,"Politics"),
-            new Student("Ion", "Cruza", 26, 83737832, "Architecture"),
-            new Student("Jennifer", "Aniston", 40, 1983262, "Drama"),
-            new Student("Mariah", "Carry", 50, 1283262, "Drama"),
-            new Student("Tomas", "Kent", 18, 247262, "Geography")
+            new Student("Romee","Strjid",21,98362,2,"Informatics"),
+            new Student("Viktor","Orban",25,938274,3,"Politics"),
+            new Student("Ion", "Cruza", 26, 83737832,4, "Architecture"),
+            new Student("Jennifer", "Aniston", 40, 1983262,6, "Drama"),
+            new Student("Mariah", "Carry", 50, 1283262,3, "Drama"),
+            new Student("Tomas", "Kent", 18, 247262, 4,"Geography")
           };
 
          int option = 0;
@@ -42,13 +42,13 @@ namespace OOP
             switch (option) {
                case 1:
                   foreach (Teacher teacher in teachers) {
-                    teacher.Display();
+                    teacher.GetDetail();
                      ((Person)teacher).CareerPath();
                   }
                   break;
                case 2:
                   foreach (Student student in students) {
-                     student.Display();
+                     student.GetDetail();
                      student.CareerPath();
                   }
                   break;

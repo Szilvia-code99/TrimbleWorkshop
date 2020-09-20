@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_7.InterfacesAndPolymorphism</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UserInputValidator\UserInputValidator.csproj" />
+    <ProjectReference Include="..\6.OOP\6.OOP.csproj" />
   </ItemGroup>
 
 </Project>

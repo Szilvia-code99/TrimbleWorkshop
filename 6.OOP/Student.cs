@@ -7,19 +7,22 @@ namespace OOP
    /// </summary>
    public class Student : Person
    {
-      protected string major;
+      public int yearOfStudy { get; set; }
+      public string studyProgram {get; set; }
 
-      public Student(string Name,string Surname, int Age,int Identifier,string Major) : base(Name, Surname, Age, Identifier)
+      public Student() { }
+      public Student(string name,string surname, int age,int identifier,int yearOfStudy,string studyProgram) : base(name, surname, age, identifier)
       {
-         this.major = Major;
+         this.studyProgram = studyProgram;
+         this.yearOfStudy = yearOfStudy;
       }
 
       /// <summary>
       /// Displaying students attributes
       /// </summary>
-      public new void Display()
+      public new void GetDetail()
       {
-         Console.WriteLine($"Major: {major}");
+         Console.WriteLine($"Year of study: {yearOfStudy} Study program: {studyProgram}");
       }
 
       /// <summary>
@@ -29,5 +32,6 @@ namespace OOP
       {
          Console.WriteLine("Learning for bachelor's degree");
       }
+
    }
 }
