@@ -5,7 +5,7 @@ using Assert = NUnit.Framework.Assert;
 
 namespace ExampleUnitTests
 {
-   
+
    /// <summary>
    /// Unit tests class for collections class
    /// </summary>
@@ -15,11 +15,11 @@ namespace ExampleUnitTests
       /// <summary>
       /// Unit test for testing prime numbers
       /// </summary>
-      [Test,Sequential]
-      public void TestIsPrime_01_ValidPrimeNumbers([Values(7,11,17)] int primeNumber)
+      [Test, Sequential]
+      public void TestIsPrime_01_ValidPrimeNumbers([Values(7, 11, 15)] int primeNumber)
       {
          //Assert & Act
-         Assert.IsTrue(Collections.IsPrime(primeNumber),"Number is prime");
+         Assert.IsTrue(Collections.IsPrime(primeNumber), "Number is prime");
       }
       [Test]
       public void TestIsPrime_02_NonPrimeNumbers()
@@ -28,7 +28,7 @@ namespace ExampleUnitTests
          int prime = 6;
 
          //Assert & Act
-        Assert.IsFalse(Collections.IsPrime(prime), "Number is NOT prime");
+         Assert.IsFalse(Collections.IsPrime(prime), "Number is NOT prime");
       }
 
 
@@ -54,7 +54,7 @@ namespace ExampleUnitTests
          int actualCountOfPrimes = Collections.CountPrimeNumbers(numbers);
 
          //Assert & Act
-         Assert.AreNotEqual(expectedCountOfPrimes,actualCountOfPrimes,"Not equal" );
+         Assert.AreNotEqual(expectedCountOfPrimes, actualCountOfPrimes, "Not equal");
       }
    }
 }

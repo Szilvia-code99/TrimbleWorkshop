@@ -1,31 +1,31 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OperatorsAndLoops1;
+﻿using OperatorsAndLoops1;
+using NUnit.Framework;
 
-namespace OperatorsAndLoopsTests
+namespace ExampleUnitTests
 {
    /// <summary>
    /// Unit tests class for OperatorsAndLoops class
    /// </summary>
-   [TestClass]
+   [TestFixture]
    public class OperatorsAndLoopsTests
    {
       /// <summary>
       /// Unit test for isStringPlaindrome method(test forr when is true)
       /// </summary>
-      [TestMethod]
-      public void  StringIsPalindrome()
+      [Test]
+      public void IsStringPalindrome_01_StringIsPalindrome()
       {
          //Arrange
          string text = "anna";
          //Assert & Act
-         Assert.IsTrue(OperatorsAndLoops.isStringPalindrome(text),"String is palindrom");
+         Assert.IsTrue(OperatorsAndLoops.isStringPalindrome(text), "String is palindrom");
       }
 
       /// <summary>
       /// Unit test for isStringPlaindrome method(test forr when is false)
       /// </summary>
-      [TestMethod]
-      public void StringIsNotPalindrome()
+      [Test]
+      public void IsStringPalindrome_02_StringIsNotPalindrome()
       {
          //Arrange
          string text = "jdhag";
