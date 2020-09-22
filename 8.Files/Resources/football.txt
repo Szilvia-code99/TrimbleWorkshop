@@ -4,3 +4,4 @@ kezdi 3:1 sepsi
 kezdi 4:4 sepsi
 kezdi 1:1 sepsi
 cluj 5:2 sepsi
+sepsi 5:0 cluj

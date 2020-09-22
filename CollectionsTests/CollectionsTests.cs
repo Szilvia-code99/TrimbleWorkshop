@@ -1,40 +1,38 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using _5Collections;
 using System.Collections.Generic;
+using NUnit.Framework;
+using Assert = NUnit.Framework.Assert;
 
 namespace ExampleUnitTests
 {
+   
    /// <summary>
    /// Unit tests class for collections class
    /// </summary>
-   [TestClass]
+   [TestFixture]
    public class CollectionsTests
    {
       /// <summary>
       /// Unit test for testing prime numbers
       /// </summary>
-      [TestMethod]
-     // [Sequential]
-      public void TestIsPrime_01_ValidPrimeNumbers()
+      [Test,Sequential]
+      public void TestIsPrime_01_ValidPrimeNumbers([Values(7,11,17)] int primeNumber)
       {
-         //Arrange
-         int prime = 7;
-
          //Assert & Act
-        Assert.IsTrue(Collections.IsPrime(prime),"Number is prime");
+         Assert.IsTrue(Collections.IsPrime(primeNumber),"Number is prime");
       }
-      [TestMethod]
+      [Test]
       public void TestIsPrime_02_NonPrimeNumbers()
       {
          //Arrange
          int prime = 6;
 
          //Assert & Act
-         Assert.IsFalse(Collections.IsPrime(prime), "Number is NOT prime");
+        Assert.IsFalse(Collections.IsPrime(prime), "Number is NOT prime");
       }
 
 
-      [TestMethod]
+      [Test]
       public void CountPrimeNumbers_01_CorrectlyCountPrimeNumbers()
       {
          //Arrange
@@ -46,7 +44,7 @@ namespace ExampleUnitTests
          Assert.AreEqual(expectedCountOfPrimes, actualCountOfPrimes);
       }
 
-      [TestMethod]
+      [Test]
       public void CountPrimeNumbers_02_IncorrectlyCountPrimeNumbers()
       {
          //Arrange
