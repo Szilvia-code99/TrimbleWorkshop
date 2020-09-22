@@ -35,19 +35,18 @@ namespace InterfacesAndPolymorphism
 
           FacultyManager manager = new FacultyManager(students, teachers);
 
-          List<Student> studentss = manager.GetStudents();
-          foreach(Student student in studentss){
+          List<Student> studentsList = manager.GetStudents();
+          foreach(Student student in studentsList){
              student.GetDetail();
             }
 
-          List<Teacher> teacherss = manager.GetTeachers();
-          foreach(Teacher teacher in teacherss){
+          List<Teacher> teachersList = manager.GetTeachers();
+          foreach(Teacher teacher in teachersList){
              teacher.GetDetail();
             }
 
          string vehicleChoice = String.Empty;
          do {
-            Console.WriteLine("");
             while (vehicleChoice != "Car" && vehicleChoice != "Truck" && vehicleChoice != "Exit") {
                UserInputValidator.UserInputValidation.ValidateUserInput(ref vehicleChoice, "What do you want to drive? Car/Truck/Exit");
             }
@@ -55,11 +54,11 @@ namespace InterfacesAndPolymorphism
                Car car = new Car();
                string exit = string.Empty;
                do {
-                  float fuel = 0;
+                  float fuel = 0.0F;
                   UserInputValidator.UserInputValidation.ValidateUserInput(ref fuel, "How much fuel you have?");
                   car.AddMaxFuel(fuel);
                   car.DisplayDetails();
-                  float distance = 0;
+                  float distance = 0.0F;
                   UserInputValidator.UserInputValidation.ValidateUserInput(ref distance, "How many km do you want to drive?");
                   car.Drive(distance);
                   car.DisplayDetails();
@@ -69,11 +68,11 @@ namespace InterfacesAndPolymorphism
                Truck truck = new Truck();
                string exit = string.Empty;
                do {
-                  float fuel = 0;
+                  float fuel = 0.0F;
                   UserInputValidator.UserInputValidation.ValidateUserInput(ref fuel, "How much fuel you have?");
                   truck.AddMaxFuel(fuel);
                   truck.DisplayDetails();
-                  float distance = 0;
+                  float distance = 0.0F;
                   UserInputValidator.UserInputValidation.ValidateUserInput(ref distance, "How many km do you want to drive?");
                   truck.Drive(distance);
                   truck.DisplayDetails();

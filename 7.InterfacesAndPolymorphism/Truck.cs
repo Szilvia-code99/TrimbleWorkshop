@@ -10,7 +10,7 @@ namespace InterfacesAndPolymorphism
    /// </summary>
    public class Truck : Vehicle
    {
-      protected float fuelLoss=5/100;
+      protected const float fuelLoss= 5 / 100;
       public Truck() : base(400,13,500)  {  }
     
       /// <summary>
@@ -21,8 +21,9 @@ namespace InterfacesAndPolymorphism
       {
          this.maxRefuelingAmount = maxRefuelingAmount;
       }
+
       /// <summary>
-      /// Main fucntion to drive a truck
+      /// Main function to drive a truck
       /// </summary>
       /// <param name="km"></param>
       public void Drive(float km)
@@ -59,6 +60,5 @@ namespace InterfacesAndPolymorphism
             maxRefuelingAmount -= fuel;
          }
       }
-
    }
 }

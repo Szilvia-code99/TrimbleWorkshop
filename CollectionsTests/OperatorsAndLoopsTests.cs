@@ -1,7 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OperatorsAndLoops1;
 
-namespace OperatorsAndLoopsTests
+namespace ExampleUnitTests
 {
    /// <summary>
    /// Unit tests class for OperatorsAndLoops class
@@ -13,7 +13,7 @@ namespace OperatorsAndLoopsTests
       /// Unit test for isStringPlaindrome method(test forr when is true)
       /// </summary>
       [TestMethod]
-      public void  StringIsPalindrome()
+      public void IsStringPalindrome_01_StringIsPalindrome()
       {
          //Arrange
          string text = "anna";
@@ -25,7 +25,7 @@ namespace OperatorsAndLoopsTests
       /// Unit test for isStringPlaindrome method(test forr when is false)
       /// </summary>
       [TestMethod]
-      public void StringIsNotPalindrome()
+      public void IsStringPalindrome_02_StringIsNotPalindrome()
       {
          //Arrange
          string text = "jdhag";

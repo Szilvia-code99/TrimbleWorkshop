@@ -1,0 +1,6 @@
+kezdi 1:2 sepsi
+sepsi 3:1 kezdi
+kezdi 3:1 sepsi
+kezdi 4:4 sepsi
+kezdi 1:1 sepsi
+cluj 5:2 sepsi

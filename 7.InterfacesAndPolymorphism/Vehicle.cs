@@ -9,11 +9,11 @@ namespace InterfacesAndPolymorphism
    /// </summary>
    public class Vehicle
    {
-      protected float fuelQuantity;//how much can fit in the car
-      protected float fuelInTank;//how much fuel is in the tank currently
-      protected float fuelConsumption;//in liters per km
+      protected float fuelQuantity;    //how much can fit in the car
+      protected float fuelInTank;      //how much fuel is in the tank currently
+      protected float fuelConsumption;    //in liters per km
       protected float maxDistanceToDrive;
-      protected float maxRefuelingAmount;//how much fuel you have to spare
+      protected float maxRefuelingAmount;    //how much fuel you have to spare
 
       public Vehicle(float fuelQuantity, float fuelConsumption, float maxDistanceToDrive)
       {
@@ -21,8 +21,6 @@ namespace InterfacesAndPolymorphism
          this.fuelConsumption = fuelConsumption;
          this.maxDistanceToDrive = maxDistanceToDrive;
       }
-
-      public Vehicle() { }
      
       /// <summary>
       /// Method for displaying vehicle details
@@ -31,7 +29,5 @@ namespace InterfacesAndPolymorphism
       {
          Console.WriteLine($"Fuel quantity: {fuelQuantity}, Fuel in tank: {fuelInTank}, Fuel consumption: {fuelConsumption}, MaxDistanceToDrive: {maxDistanceToDrive}, MaxRefuelingAmount: {maxRefuelingAmount} ");
       }
-
-      
    }
 }

@@ -20,15 +20,17 @@ namespace InterfacesAndPolymorphism
       {
          this.maxRefuelingAmount = maxRefuelingAmount;
       }
+
       /// <summary>
-      /// Main function to drive a care
+      /// Main function to drive a car
       /// </summary>
       /// <param name="km"></param>
       public void Drive(float km)
       {
          if (maxDistanceToDrive <= 0.0F) {
             Console.WriteLine("You cant drive further");
-         } else { if (fuelInTank >= fuelConsumption * km) {
+         } else { 
+            if (fuelInTank >= fuelConsumption * km) {
                Console.WriteLine($"You drove {km} kilometers");
                fuelInTank -= fuelConsumption * km;
                maxDistanceToDrive -= km;
